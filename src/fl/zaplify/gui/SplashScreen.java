@@ -4,6 +4,9 @@
  */
 package fl.zaplify.gui;
 
+import com.formdev.flatlaf.FlatLightLaf;
+import guis.loginMember;
+
 /**
  *
  * @author MSI CYBORG
@@ -15,6 +18,45 @@ public class SplashScreen extends javax.swing.JFrame {
      */
     public SplashScreen() {
         initComponents();
+        loadingAnimation();
+    }
+    private void loadingAnimation(){
+        
+        Thread t;
+        t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for(int i =0; i <= 100; i++){
+                    jProgressBar1.setValue(i);
+                    prentage.setText(i + "%");
+                    try{
+                        Thread.sleep(50);
+                        if(i == 50){
+                            loadingLabel.setText("Connecting to Databse..");
+                        }else if(i == 75){
+                            loadingLabel.setText("Finalizing...");
+                            
+                        }else if(i == 100){
+                            
+                            
+                            loginMember loUi = new loginMember();
+                            loUi.setVisible(true);
+                            dispose();
+                        }
+                        
+                        
+                    }catch (InterruptedException e) {
+                        System.out.println(e);
+                        
+                    }
+                
+                }
+                
+                
+            }
+            
+        });
+       t.start();
     }
 
     /**
@@ -26,49 +68,55 @@ public class SplashScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        loadingLabel = new javax.swing.JLabel();
+        prentage = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fl/zaplify/img/GreenandWhitePhotoGridWebDesignServicesInstagramPost1-ezgif.com-crop.gif"))); // NOI18N
+        jLabel2.setPreferredSize(new java.awt.Dimension(291, 218));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 90, 230, 210));
+
+        jProgressBar1.setForeground(new java.awt.Color(104, 186, 127));
+        jPanel1.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 290, -1));
+
+        loadingLabel.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        loadingLabel.setText("Loading...");
+        jPanel1.add(loadingLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, -1, -1));
+
+        prentage.setText("0%");
+        jPanel1.add(prentage, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fl/zaplify/img/splashbg.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
+        FlatLightLaf.setup();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -78,5 +126,11 @@ public class SplashScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JLabel loadingLabel;
+    private javax.swing.JLabel prentage;
     // End of variables declaration//GEN-END:variables
 }
