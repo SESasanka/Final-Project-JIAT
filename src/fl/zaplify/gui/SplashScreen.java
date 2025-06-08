@@ -6,6 +6,7 @@ package fl.zaplify.gui;
 
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
+import fl.zaplify.util.AppIcon;
 import guis.loginMember;
 
 /**
@@ -19,45 +20,49 @@ public class SplashScreen extends javax.swing.JFrame {
      */
     public SplashScreen() {
         initComponents();
+        init();
         loadingAnimation();
     }
-    private void loadingAnimation(){
-        
+
+    public void init() {
+        AppIcon.applyIcon(this);
+
+    }
+
+    private void loadingAnimation() {
+
         Thread t;
         t = new Thread(new Runnable() {
             @Override
             public void run() {
-                for(int i =0; i <= 100; i++){
+                for (int i = 0; i <= 100; i++) {
                     jProgressBar1.setValue(i);
                     prentage.setText(i + "%");
-                    try{
+                    try {
                         Thread.sleep(50);
-                        if(i == 50){
+                        if (i == 50) {
                             loadingLabel.setText("Connecting to Databse..");
-                        }else if(i == 75){
+                        } else if (i == 75) {
                             loadingLabel.setText("Finalizing...");
-                            
-                        }else if(i == 100){
-                            
-                            
+
+                        } else if (i == 100) {
+
                             SelectUserRole selectRole = new SelectUserRole();
                             selectRole.setVisible(true);
                             dispose();
                         }
-                        
-                        
-                    }catch (InterruptedException e) {
+
+                    } catch (InterruptedException e) {
                         System.out.println(e);
-                        
+
                     }
-                
+
                 }
-                
-                
+
             }
-            
+
         });
-       t.start();
+        t.start();
     }
 
     /**

@@ -6,6 +6,7 @@ package fl.zaplify.gui;
 
 import com.formdev.flatlaf.FlatClientProperties;
 import com.formdev.flatlaf.FlatLightLaf;
+import fl.zaplify.util.AppIcon;
 
 /**
  *
@@ -20,18 +21,17 @@ public class SelectUserRole extends javax.swing.JFrame {
         initComponents();
         UpdateComponents();
     }
-    
-    
-    public void UpdateComponents(){
-        
+
+    public void UpdateComponents() {
+        AppIcon.applyIcon(this);
+
         jPanel2.putClientProperty(FlatClientProperties.STYLE, "arc:999");
         adminBtn.putClientProperty(FlatClientProperties.STYLE, "arc:50");
-         stockManager.putClientProperty(FlatClientProperties.STYLE, "arc:50");
-          casierBtn.putClientProperty(FlatClientProperties.STYLE, "arc:50");
-           backBtn.putClientProperty(FlatClientProperties.STYLE, "arc:999");
-        
+        stockManager.putClientProperty(FlatClientProperties.STYLE, "arc:50");
+        casierBtn.putClientProperty(FlatClientProperties.STYLE, "arc:50");
+        backBtn.putClientProperty(FlatClientProperties.STYLE, "arc:999");
+
     }
-        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -102,6 +102,11 @@ public class SelectUserRole extends javax.swing.JFrame {
                 casierBtnMouseClicked(evt);
             }
         });
+        casierBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                casierBtnActionPerformed(evt);
+            }
+        });
         jPanel1.add(casierBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 190, 250, 240));
 
         adminBtn.setBackground(new java.awt.Color(255, 255, 255));
@@ -156,15 +161,18 @@ public class SelectUserRole extends javax.swing.JFrame {
 
     private void casierBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_casierBtnMouseClicked
         // TODO add your handling code here:
-        HomeScreen home = new HomeScreen();
-        home.setVisible(true);
+        loginMember loginM = new loginMember();
+        loginM.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_casierBtnMouseClicked
+
+    private void casierBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casierBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_casierBtnActionPerformed
 
     /**
      * @param args the command line arguments
      */
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adminBtn;
