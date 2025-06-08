@@ -9,6 +9,7 @@ import com.formdev.flatlaf.FlatDarkLaf;
 import fl.zaplify.panel.DashboardPanel;
 import fl.zaplify.panel.InvoicePanel;
 import fl.zaplify.panel.SettingsPanel;
+import fl.zaplify.util.AppIcon;
 import java.awt.CardLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -35,6 +36,8 @@ public class HomeScreen extends javax.swing.JFrame {
     }
 
     public void UpdateComponents() {
+        AppIcon.applyIcon(this);
+
         jPanel4.setVisible(false);
         this.jPanel1.putClientProperty(FlatClientProperties.STYLE, "arc:20");
         this.jPanel2.putClientProperty(FlatClientProperties.STYLE, "arc:20");
@@ -140,7 +143,7 @@ public class HomeScreen extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 120, 30));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fl/zaplify/img/logo (2).png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fl/zaplify/img/mainLogo.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
