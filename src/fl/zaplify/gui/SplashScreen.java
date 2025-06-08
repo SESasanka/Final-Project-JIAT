@@ -4,6 +4,7 @@
  */
 package fl.zaplify.gui;
 
+import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import guis.loginMember;
 
@@ -39,8 +40,8 @@ public class SplashScreen extends javax.swing.JFrame {
                         }else if(i == 100){
                             
                             
-                            loginMember loUi = new loginMember();
-                            loUi.setVisible(true);
+                            SelectUserRole selectRole = new SelectUserRole();
+                            selectRole.setVisible(true);
                             dispose();
                         }
                         
@@ -116,7 +117,7 @@ public class SplashScreen extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        FlatLightLaf.setup();
+        FlatDarkLaf.setup();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
