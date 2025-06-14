@@ -84,6 +84,8 @@ A robust and scalable Point of Sale (POS) solution designed specifically for sup
 ---
 
 ## 🚀 Getting Started
+0. Jam Link
+   ```https://www.figma.com/board/ytszlzG1SS2F4NE13sCSsS/Untitled?node-id=0-1&t=qQldvDhqNMJlZ6Ym-1```
 
 1. Clone the repository  
    ```bash
