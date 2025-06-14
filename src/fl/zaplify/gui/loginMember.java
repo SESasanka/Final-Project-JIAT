@@ -207,6 +207,9 @@ public class loginMember extends javax.swing.JFrame {
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
+        HomeScreen home = new HomeScreen();
+        home.setVisible(true);
+        dispose();
     }//GEN-LAST:event_loginBtnActionPerformed
 
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
