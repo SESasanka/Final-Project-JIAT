@@ -7,7 +7,7 @@ package fl.zaplify.gui;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import fl.zaplify.util.AppIcon;
-import guis.loginMember;
+import fl.zaplify.gui.loginMember;
 
 /**
  *

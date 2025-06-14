@@ -5,14 +5,14 @@
 package fl.zaplify.gui;
 
 import com.formdev.flatlaf.FlatClientProperties;
+import com.formdev.flatlaf.FlatDarculaLaf;
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.extras.FlatSVGIcon;
-import fl.zaplify.util.AppIcon;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.JTextField;
-import guis.RoundedTextField;
+
 import java.awt.FlowLayout;
 
 /**
@@ -34,14 +34,16 @@ public class loginMember extends javax.swing.JFrame {
     }
 
     public void updateComponents() {
-        AppIcon.applyIcon(this);
-        email.putClientProperty(FlatClientProperties.STYLE, "arc:50");
+
+        email.putClientProperty("JComponent.roundRect", true);
         email.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Email");
         password.putClientProperty(FlatClientProperties.STYLE, "arc:50");
         password.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Password");
 
         loginBtn.putClientProperty(FlatClientProperties.STYLE, "arc:50");
         loginBtn.setBorderPainted(false);
+        
+        
 
     }
 
@@ -93,10 +95,10 @@ public class loginMember extends javax.swing.JFrame {
         });
 
         jLabel3.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Forgot Password?");
 
         password.setBackground(new java.awt.Color(255, 255, 255));
-        password.setForeground(new java.awt.Color(51, 51, 51));
         password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordActionPerformed(evt);
@@ -104,9 +106,8 @@ public class loginMember extends javax.swing.JFrame {
         });
 
         email.setBackground(new java.awt.Color(255, 255, 255));
-        email.setForeground(new java.awt.Color(51, 51, 51));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guis/icons8-close-30.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fl/zaplify/img/icons8-close-30.png"))); // NOI18N
         jLabel4.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jLabel4AncestorAdded(evt);
@@ -169,9 +170,9 @@ public class loginMember extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guis/GreenandWhitePhotoGridWebDesignServicesInstagramPost1-ezgif.com-resize.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fl/zaplify/img/logingif.gif"))); // NOI18N
         jPanel7.add(jLabel1);
-        jLabel1.setBounds(-50, 70, 423, 442);
+        jLabel1.setBounds(-10, 70, 423, 442);
 
         jPanel5.add(jPanel7);
         jPanel7.setBounds(6, 0, 410, 650);
@@ -206,31 +207,27 @@ public class loginMember extends javax.swing.JFrame {
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
-        HomeScreen home = new HomeScreen();
-        
-        dispose();
-        home.setVisible(true);
     }//GEN-LAST:event_loginBtnActionPerformed
 
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordActionPerformed
 
-    private void jLabel4AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel4AncestorAdded
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jLabel4AncestorAdded
-
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
+    private void jLabel4AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel4AncestorAdded
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jLabel4AncestorAdded
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        FlatIntelliJLaf.setup();
+        FlatDarculaLaf.setup();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
